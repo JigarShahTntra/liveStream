@@ -1,0 +1,15 @@
+<% binding.pry %>
+<script type="text/javascript">
+  API_KEY = '46472552';
+  var sessionId = "<%= @room.session_id %>"
+  var token = "<%= current_user.otoken %>"
+  debugger;
+  // connect to session
+  var session = OT.initSession(API_KEY, sessionId);
+  // create publisher
+  var publisher = OT.initPublisher();
+  session.connect(token, function(err) {
+  // publish publisher
+  session.publish(publisher);
+  });
+</script>
