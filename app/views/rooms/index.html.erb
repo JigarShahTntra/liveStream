@@ -13,8 +13,8 @@
 
   <tbody>
     <% @rooms.each do |room| %>
-      <% room_path = Room.first.status.eql?('active') ? room_join_broadcast_path(room) : room_start_broadcast_path(room) %>
-      <% room_path_name = Room.first.status.eql?('active') ? "join broadcast" : 'create broadcast' %>
+      <% room_path = room.status.eql?('active') ? room_join_broadcast_path(room) : room_start_broadcast_path(room) %>
+      <% room_path_name = room.status.eql?('active') ? "join broadcast" : 'create broadcast' %>
       <tr>
         <td><%= room.name %></td>
         <td><%= room.session_id %></td>
