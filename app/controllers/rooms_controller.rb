@@ -10,7 +10,8 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    OpenTokRestService.broadcast(@room, current_user)
+    token = OpenTokRestService.new(@room).broadcast
+    current_user.update(otoken: token)
   end
 
   # GET /rooms/new
