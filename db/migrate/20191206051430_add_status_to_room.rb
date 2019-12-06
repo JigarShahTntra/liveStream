@@ -1,0 +1,5 @@
+class AddStatusToRoom < ActiveRecord::Migration[5.2]
+  def change
+    add_column :rooms, :status, :int
+  end
+end
