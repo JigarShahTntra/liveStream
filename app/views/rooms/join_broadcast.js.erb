@@ -1,0 +1,10 @@
+API_KEY = '46472552';
+var sessionId = "<%= @room.session_id %>"
+var token = "<%= current_user.otoken %>"
+var session = OT.initSession(API_KEY, sessionId);
+session.connect(token, function(err) {
+});
+// create subscriber
+session.on('streamCreated', function(event) {
+session.subscribe(event.stream);
+});

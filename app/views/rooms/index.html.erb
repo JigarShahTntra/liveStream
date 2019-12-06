@@ -13,12 +13,13 @@
 
   <tbody>
     <% @rooms.each do |room| %>
+      <% room_path = Room.first.status.eql?('active') ? room_join_broadcast_path(room) : room_start_broadcast_path(room) %>
+      <% room_path_name = Room.first.status.eql?('active') ? "join broadcast" : 'create broadcast' %>
       <tr>
         <td><%= room.name %></td>
         <td><%= room.session_id %></td>
-        <td><%= link_to 'start broadcast', room, id: 'create' %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to room_path_name, room_path, remote: true %></td>
+        <td><%= link_to 'Disconnect', room_disconnect_path(room), remote: true %></td>
       </tr>
     <% end %>
   </tbody>

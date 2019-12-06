@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'pry'
 gem 'jquery-rails'
-gem 'opentok', '~> 3.1.0'
+gem 'opentok', '~> 3.1.0', git: 'git://github.com/JigarShahBtpl/OpenTok-Ruby-SDK.git'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
